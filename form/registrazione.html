@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registrazione</title>
+  <link rel="stylesheet" type="text/css" href="../css/stileRegistrazione.css">
+  <link href="https://fonts.cdnfonts.com/css/macklin-sans" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <video muted autoplay loop class="sfondoVideo"> <source src="../res/Tairlines (1).mp4" type="video/mp4"></video>     
+    <div class="gifLogo"></div>
+    <div class="Form">
+      <h1 id="registrazione">Registrazione utente</h1>
+        <p id="credenziali"> Inserisci i tuoi dati</p>
+        <form method="post" action="./login.html">
+          <input type="text" id="firstname" name="firstname" placeholder="Nome" required>
+            <input type="text" id="lastname" name="lastname" placeholder="Cognome" required>
+            <input type="email" id="email" name="email" placeholder="Email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.(com|it|org|net|edu|gov|mil|biz|info|io|me|tv|co)$">
+            <div class="alert-box">
+              <div id="simboli">
+                <span id="symbol1">&#10008;</span><br>
+                <span id="symbol2">&#10008;</span><br>
+                <span id="symbol3">&#10008;</span><br>
+                <span id="symbol4">&#10008;</span><br>
+                <span id="symbol5">&#10008;</span><br>
+              </div>
+              <div id="testo"> 
+                <p class="checkPassword" id="text1"> Almeno una lettera minuscola </p>
+                <p class="checkPassword" id="text2"> Almeno una lettera maiuscola </p>
+                <p class="checkPassword" id="text3"> Almeno una carattere speciale </p>
+                <p class="checkPassword" id="text4"> Almeno un numero </p>
+                <p class="checkPassword" id="text5"> 8 caratteri minimi </p>
+              </div>
+            </div>
+            <input type="password" id="pass" name="pass" placeholder="Password" oninput="checkPassword()" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+,-.;'/?[\]{}|`~=:]).{8,}$">
+            <input type="password" id="confirm" name="confirm" placeholder="Conferma password" required>
+            <p id="show-password"><input type="checkbox" onclick="myFunction()"> Mostra password</p>
+            <div id="error"><span id="error-message"></span></div>
+
+            <script>
+              //controllo regex
+              function checkPassword() {
+                var password = document.getElementById("pass").value;
+                var lowercaseRegex = /^(?=.*[a-z])/;
+                var uppercaseRegex = /^(?=.*[A-Z])/;
+                var SCcaseRegex = /^(?=.*[!@#$%^&*()_+,-.;'/?[\]{}|'~=:])/;
+                var numbercaseRegex = /^(?=.*\d)/;
+                var minimumcaseRegex = /.{8,}$/;
+                var symbol1 = document.getElementById("symbol1");
+                var symbol2 = document.getElementById("symbol2");
+                var symbol3 = document.getElementById("symbol3");
+                var symbol4 = document.getElementById("symbol4");
+                var symbol5 = document.getElementById("symbol5");
+                var text1 = document.getElementById("text1");
+                var text2 = document.getElementById("text2");
+                var text3 = document.getElementById("text3");
+                var text4 = document.getElementById("text4");
+                var text5 = document.getElementById("text5");
+                
+                //lettera minuscola
+                if (lowercaseRegex.test(password)) {
+                  symbol1.innerHTML = "&#10003;"; // simbolo di spunta
+                  symbol1.style.color = "#8097b7";
+                  text1.style.color = "#8097b7";
+                  symbol1.style.fontSize = "11pt"; 
+                  
+                } else {
+                  symbol1.innerHTML = "&#10008;"; // simbolo di croce
+                  symbol1.style.color = "#02265F";
+                  text1.style.color = "#02265F";
+                  symbol1.style.fontSize = "10.5pt";
+                }
+
+                //lettera maiuscola
+                if (uppercaseRegex.test(password)) {
+                  symbol2.innerHTML = "&#10003;"; // simbolo di spunta
+                  symbol2.style.color = "#8097b7";
+                  text2.style.color = "#8097b7";
+                  symbol2.style.fontSize = "11pt"; 
+                  
+                } else {
+                  symbol2.innerHTML = "&#10008;"; // simbolo di croce
+                  symbol2.style.color = "#02265F";
+                
+                  text2.style.color = "#02265F";
+                  symbol2.style.fontSize = "10.5pt";
+                }
+
+                  //carattere speciale
+                  if (SCcaseRegex.test(password)) {
+                  symbol3.innerHTML = "&#10003;"; // simbolo di spunta
+                  symbol3.style.color = "#8097b7";
+                  text3.style.color = "#8097b7";
+                  symbol3.style.fontSize = "11pt"; 
+                  
+                } else {
+                  symbol3.innerHTML = "&#10008;"; // simbolo di croce
+                  symbol3.style.color = "#02265F";
+                  
+                  text3.style.color = "#02265F";
+                  symbol3.style.fontSize = "10.5pt";
+                }
+
+                  //numero
+                  if (numbercaseRegex.test(password)) {
+                  symbol4.innerHTML = "&#10003;"; // simbolo di spunta
+                  symbol4.style.color = "#8097b7";
+                  text4.style.color = "#8097b7";
+                  symbol4.style.fontSize = "11pt"; 
+                  
+                } else {
+                  symbol4.innerHTML = "&#10008;"; // simbolo di croce
+                  symbol4.style.color = "#02265F";
+                
+                  text4.style.color = "#02265F";
+                  symbol4.style.fontSize = "10.5pt";
+                }
+                
+                  //alemeno 8 caratteri
+                  if (minimumcaseRegex.test(password)) {
+                  symbol5.innerHTML = "&#10003;"; // simbolo di spunta
+                  symbol5.style.color = "#8097b7";
+                  text5.style.color = "#8097b7";
+                  symbol5.style.fontSize = "11pt"; 
+                  
+                } else {
+                  symbol5.innerHTML = "&#10008;"; // simbolo di croce
+                  symbol5.style.color = "#02265F";
+        
+                  text5.style.color = "#02265F";
+                  symbol5.style.fontSize = "10.5pt";
+                }
+              }
+
+              //appare finistra per il check della password
+                var checkbox = document.getElementById("pass");
+                var alertBox = document.querySelector(".alert-box");
+
+              checkbox.addEventListener("click", function() {
+                alertBox.style.display = "block";
+              });
+
+              document.addEventListener("click", function(event) {
+                if (event.target != checkbox) {
+                  alertBox.style.display = "none";
+              }
+              });
+
+              //vedo/non vedo della password
+              function myFunction() {
+                var x = document.getElementById("pass");
+                var y = document.getElementById("confirm");
+                if ((x.type === "password" && y.type === "password") || x.type === "password" || y.type === "password") {
+                      x.type = "text";
+                      y.type = "text";
+                } else if (x.value === "" && y.value === "") {
+                      x.type = "password";
+                      y.type = "password";
+                } else {
+                      x.type = "password";
+                      y.type = "password";
+                      }
+                }
+              
+              //controllo se le password coincidono
+                const passwordInput = document.getElementById('pass');
+                const confirmPasswordInput = document.getElementById('confirm');
+                const errorMessage = document.getElementById('error-message');
+
+              confirmPasswordInput.addEventListener('input', function() {
+                    if (confirmPasswordInput.value === '') {
+                          errorMessage.textContent = '';
+                      } else if (passwordInput.value !== confirmPasswordInput.value) {
+                      errorMessage.textContent = 'Le password non coincidono';
+                    } else {
+                      errorMessage.textContent = '';
+                    }
+                });
+                passwordInput.addEventListener('input', function() {
+                    if (confirmPasswordInput.value === '') {
+                          errorMessage.textContent = '';
+                      } else if (passwordInput.value !== confirmPasswordInput.value) {
+                      errorMessage.textContent = 'Le password non coincidono';
+                    } else {
+                      errorMessage.textContent = '';
+                    }
+                });
+            </script>
+            
+            <a id="linkInvio" href="./login.html"><input id="invia" type="submit" value="Invia"></a></p>
+            <script>
+              var button = document.querySelector('a#linkInvio');
+
+                button.addEventListener('click', function(event) {
+                var password1 = document.getElementById('pass').value;
+                var password2 = document.getElementById('confirm').value;
+
+                  if (password1 !== password2) {
+                  event.preventDefault();
+                  }
+                });
+            </script>
+            
+            <p id="existAccount">Hai gia' un account?
+            <a href="./login.html">Login</a></p>
+        
+        </form>
+        </div>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="../css/stileLogin.css">
+        <link href="https://fonts.cdnfonts.com/css/macklin-sans" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <video muted autoplay loop class="sfondoVideo"><source src="../res/Tairlines (1).mp4" type="video/mp4"></video>
+                <div id="logoGif"></div>
+                <div class="Form">
+                <h1 id="login">Login</h1>
+                    <p id="credenziali"> Inserisci le tue credenziali</p>
+                    <form method="post">
+                        <input type="email" id="email" name="email" placeholder="Inserisci email" required oninvalid="this.setCustomValidity('Il campo è obbligatorio')" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.(com|it|org|net|edu|gov|mil|biz|info|io|me|tv|co)$">
+                        <input type="password" id="pass" name="pass" placeholder="Inserisci password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+,-.;'/?[\]{}|`~=:]).{8,}$" title="La password deve contenere almeno un numero, una lettera maiuscola, una lettera minuscola, un carattere speciale e minimo 8 caratteri">
+                        <p id="show-password"><input type="checkbox" onclick="myFunction()"> Mostra password</p>
+                        <p><a id="linkInvio" href=""><input id="invia" type="submit" value="Invia"></a></p>
+                    <script>
+                        var logoGif = document.getElementById("logoGif");
+                        logoGif.style.transition = "background-image 1s ease-in-out";
+                        setTimeout(function() {
+                            logoGif.style.backgroundImage = "url(../res/LogobiancoResize.png)"
+                        }, 999);
+
+                        function myFunction() {
+                            var x = document.getElementById("pass");
+                            if ( x.type === "password") {x.type = "text";} 
+                            else {x.type = "password";}
+                        }
+                        document.getElementById("email").addEventListener("input", function() {
+                            this.setCustomValidity("");
+                        });
+
+                    </script>
+                    <p id="lostPass"><a href="recuperoCredenziali.html">Password dimenticata?</a></p>
+                    <p id="newAccount"> Non hai ancora un account?
+                    <a href="registrazione.html">Registrati</a></p>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

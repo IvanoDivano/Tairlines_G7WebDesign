@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recupero Password</title>
+        <link rel="stylesheet" type="text/css" href="../css/stileRPWD.css">
+        <link href="https://fonts.cdnfonts.com/css/macklin-sans" rel="stylesheet">
+    </head>
+
+    <body>
+        <div class="container">
+            <video muted autoplay loop class="sfondoVideo"> <source src="../res/Tairlines (1).mp4" type="video/mp4"></video>
+            <div class="gifLogo"></div>
+            <div class="Form">
+            <h1 id="recuperoPass">Recupero password</h1>
+            <p id="credenziali"> Inserisci le tue credenziali</p>
+                <form onsubmit="mostraTesto()" id="myForm">
+                    <input type="email" id="email" name="email" placeholder="Inserisci email" required pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.(com|it|org|net|edu|gov|mil|biz|info|io|me|tv|co)$">
+                    <p id="hoverInvia"><input type="submit" id="invia"  value="Invia"></p>
+                    <p id="testo">Ti abbiamo mandato un messaggio! Controlla la tua email</p>
+                </form>
+
+                <script>
+                    document.getElementById("myForm").addEventListener("submit", function(event){event.preventDefault();});
+                    function mostraTesto() { document.getElementById("testo").style.display = "block";}
+                </script>
+        </div>
+    </body>
+</html>
+                

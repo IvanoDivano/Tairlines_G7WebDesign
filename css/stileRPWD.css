@@ -1,0 +1,139 @@
+@font-face{
+    font-family: TairlinesFontSB; src: url(../res/IBMPlexSans-SemiBold.ttf);
+}
+@font-face {
+    font-family: TairlinesFontB; src: url(../res/IBMPlexSans-Bold.ttf);
+}
+@font-face{
+    font-family: TairlinesFont; src: url(../res/IBMPlexSans-Regular.ttf);
+}
+
+body{
+    margin:0;
+    overflow: hidden;
+}
+
+.container{
+    margin:0;
+    display: flex;
+}
+
+.videoSfondo{ 
+    position: absolute;
+}
+
+.gifLogo {
+    background-image: url(../res/LogobiancoResize.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 2%;
+    margin-left:2%;
+    width:15%;
+    height:15%;
+    float:left;
+    position: absolute;
+}
+
+.gifLogo:hover{
+    background-image: url(../res/AnimazioneBianca.gif);
+}
+
+.Form{
+    position: absolute;
+    width: 37%;
+    height: 340px;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 2px 2px 10px rgb(145, 141, 141);
+    margin-top: 13%;
+    margin-left: 32%;
+    margin-right: 12%;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#recuperoPass{
+    color: #002359;
+    font-family: 'Macklin Sans', sans-serif;
+    font-size: 22pt;  
+    padding-top:13px;
+    margin-bottom: 15px;
+}
+
+#credenziali{
+    color: #02265F;
+    opacity: 80%;
+    font-family: 'TairlinesFont';
+    font-size: 15pt;
+    padding-bottom:20px;
+}
+
+#invia{
+    background-color: #02265F; 
+    opacity: 75%; 
+    color: white;
+    box-shadow: 2px 2px 4px black;
+    font-family: 'TairlinesFontB';
+    font-size: 13pt;
+    transition: scale .2s; 
+}
+#invia:hover{
+        scale: .95;
+}
+
+#invia:active {
+        opacity: 95%;
+}
+
+#hoverInvia:hover {
+    opacity: 95%;
+}
+
+input[type='email']{
+    width: 70%;
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    padding-left: 20px;
+    padding-top: 7px;
+    padding-bottom: 6px;
+    border-radius: 10px;
+    border: 0;
+    font-size: 13pt;
+}
+
+input[type='submit']{
+    width: 74%;
+    border-radius: 10px;
+    height: 39px;
+    font-size: 15pt;
+    border:0;
+}
+
+#testo{
+    display: none;
+    color: #02265F;
+    font-family: 'TairlinesFont';
+    font-size: 11pt;
+}
+
+input[type='email']:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0px 0px 5px #02265F;
+}
+
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type='text']:hover,
+input[type='submit']:hover,
+textarea:hover {
+  outline: none;
+  box-shadow: 0px 0px 5px #02265F;
+}
+
+input::placeholder{
+    font-family: 'TairlinesFont';
+    color: #02265F;
+    opacity: 80%;
+    font-size: 13pt;
+}
